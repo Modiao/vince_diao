@@ -9,6 +9,8 @@ import { Book } from '../types/book';
 })
 export class CartComponent implements OnInit {
 
+  @Input() book: Book = {} as Book;
+
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
@@ -18,11 +20,7 @@ export class CartComponent implements OnInit {
     return this.cartService.get();
   }
 
-  removeBook(event: Event) {
-    console.log(event.target);
-      // let elementId: number = Number((event.target as Element).id);
-      // console.log(elementId);
-      // return this.cartService.delete();
+  removeBook(book:Book) {
+    this.cartService.delete(book);
     }
-
 }

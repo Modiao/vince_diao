@@ -21,8 +21,4 @@ export class BookComponent implements OnInit {
     this.cartService.add(this.book);
     }
 
-  removeBook() {
-    this.cartService.delete(this.book);
-    }
-
 }

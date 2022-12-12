@@ -6,6 +6,8 @@
         <p class="title">Author: {{book.author | titlecase}}</p>
         <p class="currency">Montant: {{ book.amount | currency: 'EUR' }}</p>
         <p>Quantity: {{ book.quantity}}</p>
+        <button style="color: red" (click)="removeBook(book)">Remove book</button>
+
     </div>
 </div>
 <div *ngIf="getCart().length < 0">No Cart available</div>
