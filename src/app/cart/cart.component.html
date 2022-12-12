@@ -1,0 +1,11 @@
+<h1>Your Cart</h1>
+<div *ngIf="getCart().length > 0" style="display:flex;">
+    <div *ngFor="let book of getCart()">
+        <img [src]="book.src" [alt]="book.name" width="100" />
+        <p class="title">titre: {{book.name | titlecase }}</p>
+        <p class="title">Author: {{book.author | titlecase}}</p>
+        <p class="currency">Montant: {{ book.amount | currency: 'EUR' }}</p>
+        <p>Quantity: {{ book.quantity}}</p>
+    </div>
+</div>
+<div *ngIf="getCart().length < 0">No Cart available</div>
