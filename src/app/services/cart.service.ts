@@ -25,14 +25,16 @@ export class CartService {
       console.log('Book exist in the cart')
     }
     else{
+      book.quantity =  book.quantity + 1
       this.cart.push(book);
+      
     }
   }
 
   delete(book: Book) {
     this.cart.forEach(item =>{
       if(item.id == book.id){
-        if (item.quantity == 0){
+        if (item.quantity == 1){
           this.cart = this.cart.filter(objet => objet.id != book.id )
         }
         else{
